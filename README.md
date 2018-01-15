@@ -9,7 +9,7 @@ save into `banks.csv`, separated by tab
 
 # 中文
 
-从 http://furhr.com中抓取数据, 截止2018/01/15一共有`6174`页, `123464`条银行数据.
+从 http://furhr.com 中抓取数据, 截止2018/01/15一共有`6174`页, `123464`条银行数据.
 
 > 运行 `npm start`
 
