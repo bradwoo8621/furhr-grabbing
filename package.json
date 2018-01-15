@@ -1,0 +1,16 @@
+{
+  "name": "furhr-grabbing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "puppeteer": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+	  "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
