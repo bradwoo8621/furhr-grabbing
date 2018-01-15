@@ -7,7 +7,9 @@ if (fs.existsSync(fileName)) {
 }
 
 const allRows = [];
-const startTime = new Date().getTime();
+let startTime = new Date();
+console.log(`Start to fetch data at [${startTime}]`);
+startTime = startTime.getTime();
 
 (async () => {
 	const browser = await puppeteer.launch();
@@ -29,11 +31,6 @@ const startTime = new Date().getTime();
 		rows.forEach(row => {
 			allRows.push(row);
 		})
-		// rows.map(row => {
-		// 	fs.appendFileSync(fileName, row.join('\t'), 'utf8');
-		// 	fs.appendFileSync(fileName, '\r\n', 'utf8');
-		// 	return row;
-		// });
 
 		if (rows.length === 0) {
 			break;
@@ -45,11 +42,11 @@ const startTime = new Date().getTime();
 
 	await browser.close();
 
-	console.log(`Start to write file[${fileName}]...`);
-	rows.forEach(row => {
+	console.log(`Start to write file [${fileName}]...`);
+	allRows.forEach(row => {
 		fs.appendFileSync(fileName, row.join('\t'), 'utf8');
 		fs.appendFileSync(fileName, '\r\n', 'utf8');
 	});
 
-	console.log(`Totally spent ${new Date().getTime() - startTime}ms.`)
+	console.log(`Totally spent ${(new Date().getTime() - startTime) / 1000}s.`)
 })();
