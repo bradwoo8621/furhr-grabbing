@@ -29,7 +29,12 @@ startTime = startTime.getTime();
 			});
 		});
 		rows.forEach(row => {
+			// comments the following when write file in loop
 			allRows.push(row);
+			
+			// uncomments the following when write file in loop
+			// fs.appendFileSync(fileName, row.join('\t'), 'utf8');
+			// fs.appendFileSync(fileName, '\r\n', 'utf8');
 		})
 
 		if (rows.length === 0) {
@@ -42,6 +47,7 @@ startTime = startTime.getTime();
 
 	await browser.close();
 
+	// comments the following when write file in loop
 	console.log(`Start to write file [${fileName}]...`);
 	allRows.forEach(row => {
 		fs.appendFileSync(fileName, row.join('\t'), 'utf8');
